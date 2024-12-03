@@ -39,6 +39,7 @@ main {
   flex-grow: 1;
 }
 
+.flex .one,
 .flex.one {
   flex: 1;
 }
@@ -172,6 +173,10 @@ main {
 
 .text400 {
   font-weight: 400;
+}
+
+.textJustify{
+  text-align: justify;
 }
 
 .font14 {
@@ -384,4 +389,49 @@ main {
 
 .caras .dotCont .activeDot circle{
   fill: #5BC8AF;
+}
+
+.tooltip-container{
+  border: solid 2px #5BC8AF;
+  border-radius: 5px;
+  padding: 20px 10px;
+}
+
+.tooltip-container .tooltip-text {
+  width: 100%;
+  word-wrap: break-word; 
+  white-space: normal;  
+  overflow-wrap: break-word;
+  display: none;
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #217d6f;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tooltip-container:hover .tooltip-text {
+  display: block;
+}
+
+.tooltip-container .tooltip-icon {
+  visibility: hidden;
+  margin-left: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #217d6f;
+}
+
+.tooltip-container:hover{
+  color: #5BC8AF;
+}
+
+.tooltip-container:focus .tooltip-icon,
+.tooltip-container:hover .tooltip-icon{
+  visibility: visible;
 }
