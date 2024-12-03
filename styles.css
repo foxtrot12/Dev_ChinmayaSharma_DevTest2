@@ -4,7 +4,7 @@ body {
   overflow-x: hidden;
 }
 
-main{
+main {
   gap: 80px;
   background-color: #F5F5F5;
 }
@@ -78,7 +78,7 @@ main{
   z-index: 1;
 }
 
-.header .logo{
+.header .logo {
   padding-left: 128px;
 }
 
@@ -101,10 +101,35 @@ main{
 }
 
 /* Padding and Margin */
+
 .stdPadding {
-  padding-right: 128px;
-  padding-left: 128px;
+  padding-right: 64px;
+  padding-left: 64px;
 }
+
+@media (min-width: 1440px) {
+  .stdPadding {
+    padding-right: 128px;
+    padding-left: 128px;
+  }
+}
+
+/* Media query for small devices (mobile, 480px and up) */
+@media (max-width: 768px) {
+  .stdPadding {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+}
+
+/* Media query for extra-small devices (below 480px) */
+@media (max-width: 480px) {
+  .stdPadding {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}
+
 
 .padMar0 {
   padding: 0;
@@ -165,6 +190,10 @@ main{
   text-decoration: underline;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .txtDecoNone {
   text-decoration: none;
 }
@@ -179,7 +208,7 @@ main{
   cursor: pointer;
 }
 
-.cta{
+.cta {
   transition: transform 0.3s;
   gap: 10px;
   border-radius: 5px;
@@ -190,7 +219,7 @@ main{
   color: #ffffff;
 }
 
-.secondaryCta{
+.secondaryCta {
   background-color: #F5F5F5;
   color: #5BC8AF;
   border: solid 1px #5BC8AF;
@@ -228,8 +257,8 @@ main{
   color: #ffffff80;
 }
 
-.textInput input:focus + label,
-.textInput input:not(:placeholder-shown) + label {
+.textInput input:focus+label,
+.textInput input:not(:placeholder-shown)+label {
   top: -10px;
   font-size: 13px;
   background: #2a7d6c;
@@ -281,6 +310,7 @@ main{
 
 .formInner {
   height: 12%;
+  min-height: 45px;
 }
 
 /* Contact Us Section */
@@ -292,28 +322,66 @@ main{
   background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
 }
 
-.contactUsBtn{
+.contactUsBtn {
   width: 50%;
   align-self: center;
 }
 
-.contentGroup{
+.contentGroup {
   flex-direction: column;
   gap: 64px;
 }
 
-.contentImg{
+.contentImg {
   border-radius: 5px;
 }
 
-.content{
+.content {
   gap: 32px;
 }
 
-.content .weUnder{
+.content .weUnder {
   padding-top: 48px;
 }
 
-.content .contentInner{
-  gap: 40px;
+.content .contentInner {
+  /* gap: 40px; */
+}
+
+.caras {
+  gap: 36px;
+}
+
+.caras .carasInner {
+  gap: 36px;
+  /* transition: all .5s; */
+}
+
+.caras .carasCard {
+  background: #194D44;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.caras .cardQte{
+  right: 20px;
+  top: 20px;
+}
+
+.caras .hidden{
+  /* transform: translateX(1000%); */
+  display: none;
+}
+
+.caras .shown{
+  /* transform: translateX(0); */
+}
+
+.caras .dotCont{
+  width: 5%;
+  min-width: 50px;
+}
+
+.caras .dotCont .activeDot circle{
+  fill: #5BC8AF;
 }
