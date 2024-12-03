@@ -10,6 +10,9 @@ class SelectDropdown extends HTMLElement {
       <div class="selectDropdown posRel wFull hFull flex">
         <select class="selectActual posAbs hFull wFull"></select>
         <label class="hFull flex itemsCtr selectLabelActual padLeft10 wFull"></label>
+        <svg class='flex selectAdorn' width="10" height="5" viewBox="0 0 10 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.99995 5L0.669823 -2.18762e-06L9.33008 -1.43051e-06L4.99995 5Z" fill="white"/>
+        </svg>
       </div>
     `;
 
@@ -76,8 +79,6 @@ class SelectDropdown extends HTMLElement {
       }
       this.selectElement.appendChild(optionElement);
     });
-
-    
   }
 }
 

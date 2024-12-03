@@ -53,10 +53,10 @@ class Header extends HTMLElement {
 
     const template = `
     <link rel="stylesheet" href="../styles.css" />
-        <header id="${headId}" class="flex header itemsCtr stdPadding spcBw">
+        <header id="${headId}" class="posAbs flex header itemsCtr wFull spcBw">
           <div class="flex itemsCtr grow spcBw">
         <svg
-          class="flex"
+          class="flex logo"
           width="227"
           height="36"
           viewBox="0 0 227 36"

@@ -1,8 +1,15 @@
+/* General Styles */
 body {
   font-family: Montserrat;
   overflow-x: hidden;
 }
 
+main{
+  gap: 80px;
+  background-color: #F5F5F5;
+}
+
+/* Fullscreen Styles */
 .hScreen {
   height: 100vh;
 }
@@ -11,6 +18,15 @@ body {
   width: 100vw;
 }
 
+.hFull {
+  height: 100%;
+}
+
+.wFull {
+  width: 100%;
+}
+
+/* Flexbox Utilities */
 .flex {
   display: flex;
 }
@@ -56,20 +72,19 @@ body {
   align-items: center;
 }
 
-.hFull {
-  height: 100%;
-}
-
-.wFull {
-  width: 100%;
-}
-
+/* Header */
 .header {
   height: 50px;
+  z-index: 1;
+}
+
+.header .logo{
+  padding-left: 128px;
 }
 
 .header .call {
   padding-left: 46px;
+  padding-right: 128px;
   gap: 4px;
 }
 
@@ -77,11 +92,43 @@ body {
   gap: 31px;
 }
 
+.headerBg {
+  top: 0;
+  z-index: -1;
+  height: 80vh;
+  background-image: url("./assets/images/headerBg.png");
+  background-size: cover;
+}
+
+/* Padding and Margin */
 .stdPadding {
   padding-right: 128px;
   padding-left: 128px;
 }
 
+.padMar0 {
+  padding: 0;
+  margin: 0;
+}
+
+.padLeft10 {
+  padding-left: 10px;
+}
+
+/* Positioning */
+.posRel {
+  position: relative;
+}
+
+.posAbs {
+  position: absolute;
+}
+
+.wave {
+  bottom: 0px;
+}
+
+/* Text Styles */
 .textWhite {
   color: #ffffff;
 }
@@ -94,54 +141,12 @@ body {
   color: #ffffffb2;
 }
 
-.btnClear {
-  background: none;
-  border: none;
-}
-
-.cursorPtr {
-  cursor: pointer;
-}
-
-.underline {
-  text-decoration: underline;
-}
-
 .text700 {
   font-weight: 700;
 }
 
 .text400 {
   font-weight: 400;
-}
-
-.txtDecoNone {
-  text-decoration: none;
-}
-
-.headerBg {
-  top: 0;
-  z-index: -1;
-  height: 80vh;
-  background-image: url("./assets/images/headerBg.png");
-  background-size: cover;
-}
-
-.posRel {
-  position: relative;
-}
-
-.posAbs {
-  position: absolute;
-}
-
-.padMar0 {
-  padding: 0;
-  margin: 0;
-}
-
-.wave {
-  bottom: 0px;
 }
 
 .font14 {
@@ -152,18 +157,52 @@ body {
   font-size: 28px;
 }
 
-.padLeft10{
-  padding-left: 10px;
+.font18 {
+  font-size: 18px;
 }
 
-.contactUs {
-  padding: 56px 28px;
+.underline {
+  text-decoration: underline;
+}
+
+.txtDecoNone {
+  text-decoration: none;
+}
+
+/* Buttons */
+.btnClear {
+  background: none;
+  border: none;
+}
+
+.cursorPtr {
+  cursor: pointer;
+}
+
+.cta{
+  transition: transform 0.3s;
+  gap: 10px;
   border-radius: 5px;
-  gap: 16px;
-  height: 50%;
-  background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
 }
 
+.primaryCta {
+  background-color: #5bc8af;
+  color: #ffffff;
+}
+
+.secondaryCta{
+  background-color: #F5F5F5;
+  color: #5BC8AF;
+  border: solid 1px #5BC8AF;
+}
+
+.cta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 6px 0px #00000014;
+  cursor: pointer;
+}
+
+/* Forms */
 .textInput {
   /* position: relative; */
 }
@@ -176,12 +215,11 @@ body {
   outline: none;
   padding-left: 20px;
 }
+
 .textInput input:focus {
   border: solid 1px #ffffff;
 }
-.textInput input:invalid {
-  /* border: solid 1px #FF7777; */
-}
+
 .textInput label {
   transition: all 0.3s ease;
   font-size: 16px;
@@ -189,14 +227,8 @@ body {
   transform: translateY(50%);
   color: #ffffff80;
 }
-.textInput input:focus + label {
-  top: -10px;
-  font-size: 13px;
-  background: #2a7d6c;
-  transform: translateY(0);
-  color: #ffffff;
-}
 
+.textInput input:focus + label,
 .textInput input:not(:placeholder-shown) + label {
   top: -10px;
   font-size: 13px;
@@ -221,17 +253,23 @@ body {
   color: transparent;
   border: none;
   outline: none;
+  cursor: pointer;
+}
+
+.selectDropdown .selectAdorn {
+  align-self: center;
+  padding-right: 10px;
 }
 
 .selectDropdown:focus-within {
   border: solid 1px #ffffff;
 }
 
-.selectDropdown .selectLabelActual{
+.selectDropdown .selectLabelActual {
   color: #ffffff80;
 }
 
-.selectDropdown:focus-within .selectLabelActual{
+.selectDropdown:focus-within .selectLabelActual {
   color: #ffffff;
 }
 
@@ -243,4 +281,39 @@ body {
 
 .formInner {
   height: 12%;
+}
+
+/* Contact Us Section */
+.contactUs {
+  padding: 56px 28px;
+  border-radius: 5px;
+  gap: 16px;
+  height: 50%;
+  background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
+}
+
+.contactUsBtn{
+  width: 50%;
+  align-self: center;
+}
+
+.contentGroup{
+  flex-direction: column;
+  gap: 64px;
+}
+
+.contentImg{
+  border-radius: 5px;
+}
+
+.content{
+  gap: 32px;
+}
+
+.content .weUnder{
+  padding-top: 48px;
+}
+
+.content .contentInner{
+  gap: 40px;
 }
