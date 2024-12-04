@@ -60,13 +60,13 @@ class CardCarousel extends HTMLElement {
             <link rel="stylesheet" href="../styles.css" />
             <div class="flex col caras verHorCenter stdPadding">
             <div class='flex'>
-                <button class="btnClear cursorPtr prev">
+                <button class="btnClear carBtn cursorPtr prev">
                     <svg class="flex" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M36.24 39.76L20.48 24L36.24 8.24L32 4L12 24L32 44L36.24 39.76Z" fill="#EAEAEA" />
                     </svg>
                 </button>
                 ${cardsMarkup}
-                <button class="btnClear cursorPtr next">
+                <button class="btnClear carBtn cursorPtr next">
                     <svg class="flex" width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M11.76 8.24L27.52 24L11.76 39.76L16 44L36 24L16 4L11.76 8.24Z" fill="#EAEAEA" />
                     </svg>
