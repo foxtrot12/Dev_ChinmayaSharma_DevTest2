@@ -24,7 +24,7 @@
     { "id": "headServices", "label": "SERVICES", "href":"#services" }
   ]'></spr-header>
   <main class="flex col hScreen wScreen">
-    <div class="flex gap80 verHorCenter headerBg stdPadding">
+    <div class="flex spcBw verHorCenter headerBg stdPadding">
       <div class="flex one col descInner">
         <svg class="flex bigGetInSvg" width="503" height="119" viewBox="0 0 503 119" fill="none"
           xmlns="http://www.w3.org/2000/svg">
@@ -44,7 +44,7 @@
             fill="white" mask="url(#path-1-outside-1_1_92)" />
         </svg>
 
-        <svg class="flex medGetInSvg" width="500" height="119" viewBox="0 0 500 119" fill="none"
+        <svg class="medGetInSvg hide" width="500" height="119" viewBox="0 0 500 119" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <mask id="path-1-outside-1_1_330" maskUnits="userSpaceOnUse" x="-1" y="-1" width="502" height="121"
             fill="black">
@@ -63,7 +63,7 @@
         </svg>
 
 
-        <svg class="flex smallGetInSvg selfCtr" width="282" height="71" viewBox="0 0 282 71" fill="none"
+        <svg class="smallGetInSvg selfCtr hide" width="282" height="71" viewBox="0 0 282 71" fill="none"
           xmlns="http://www.w3.org/2000/svg">
           <mask id="path-1-outside-1_1_473" maskUnits="userSpaceOnUse" x="-1" y="-1" width="284" height="73"
             fill="black">
@@ -122,9 +122,9 @@
 
     <div class="flex col content stdPadding">
       <div class="flex spcBw contentInner imgGroup">
-        <img class="flex" src="./assets/images/img1.png" />
-        <img class="flex" src="./assets/images/img2.png" />
-        <img class="flex" src="./assets/images/img3.png" />
+        <img class="flex contentImg" src="./assets/images/img1.png" />
+        <img class="flex contentImg" src="./assets/images/img2.png" />
+        <img class="flex contentImg" src="./assets/images/img3.png" />
       </div>
       <svg class="flex weUnder" width="343" height="27" viewBox="0 0 343 27" fill="none"
         xmlns="http://www.w3.org/2000/svg">
@@ -223,8 +223,7 @@
       </p>
     </div>
 
-    <div class="flex col gap20">
-      <div class="flex stdPadding spcBw gap20 tooltipGrp">
+    <div class="tooltipGrp stdPadding gap20">
         <tooltip-element class="flex one" text="Needs Assessment"
           tooltiptext="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non justo quis dolor suscipit posuere ultrices id justo."></tooltip-element>
 
@@ -233,9 +232,7 @@
 
         <tooltip-element class="flex one" text="Transportation & Logistics"
           tooltiptext="Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."></tooltip-element>
-      </div>
 
-      <div class="flex stdPadding spcBw gap20 tooltipGrp">
         <tooltip-element class="flex one" text="Insurance Advocacy"
           tooltiptext="We're experienced in our individual crafts and understand how each one of our roles impacts your plan holistically."></tooltip-element>
 
@@ -244,7 +241,6 @@
 
         <tooltip-element class="flex one" text="Aftercare Planning"
           tooltiptext="Donec sodales lorem a justo ultrices, vel aliquam eros cursus. Phasellus ut ligula."></tooltip-element>
-      </div>
       <div class="flex"></div>
     </div>
 

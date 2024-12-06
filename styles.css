@@ -97,13 +97,6 @@ main {
   align-self: flex-end;
 }
 
-/* Media query for small devices (mobile) */
-@media (max-width: 768px) {
-  .header .call {
-    display: none;
-  }
-}
-
 .header .btnGroup {
   gap: 31px;
 }
@@ -112,8 +105,9 @@ main {
   background-image: url("./assets/images/headerBg.png");
   background-size: cover;
   background-position: bottom;
-  padding-top: 60px;
+  padding-top: 90px;
   padding-bottom: 60px;
+  gap: 10px;
 }
 
 /* Padding and Margin */
@@ -129,53 +123,6 @@ main {
 
 .stdPaddingLt {
   padding-left: 64px;
-}
-
-@media (min-width: 1440px) {
-  .stdPadding {
-    padding-right: 128px;
-    padding-left: 128px;
-  }
-
-  .stdPaddingRt {
-    padding-right: 128px;
-  }
-
-  .stdPaddingLt {
-    padding-left: 128px;
-  }
-}
-
-/* Media query for small devices (mobile, 480px and up) */
-@media (max-width: 768px) {
-  .stdPadding {
-    padding-right: 32px;
-    padding-left: 32px;
-  }
-
-  .stdPaddingRt {
-    padding-right: 32px;
-  }
-
-  .stdPaddingLt {
-    padding-left: 32px;
-  }
-}
-
-/* Media query for extra-small devices (below 480px) */
-@media (max-width: 480px) {
-  .stdPadding {
-    padding-right: 16px;
-    padding-left: 16px;
-  }
-
-  .stdPaddingRt {
-    padding-right: 16px;
-  }
-
-  .stdPaddingLt {
-    padding-left: 16px;
-  }
 }
 
 .padMar0 {
@@ -401,6 +348,7 @@ main {
 
 .contentImg {
   border-radius: 5px;
+  max-width: 33%;
 }
 
 .content {
@@ -430,6 +378,11 @@ main {
 .caras .cardQte {
   right: 20px;
   top: 20px;
+}
+
+.caras .carasImg {
+  aspect-ratio: 1;
+  object-fit: contain;
 }
 
 .caras .hidden {
@@ -554,7 +507,14 @@ main {
   visibility: hidden;
 }
 
+.tooltipGrp{
+  display: grid;
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
 @media (min-width: 1440px) {
+
   .header {
     flex-direction: row !important;
     gap: 40px;
@@ -580,6 +540,20 @@ main {
   .headerBg .medGetInSvg {
     display: none;
   }
+
+  .stdPadding {
+    padding-right: 128px;
+    padding-left: 128px;
+  }
+
+  .stdPaddingRt {
+    padding-right: 128px;
+  }
+
+  .stdPaddingLt {
+    padding-left: 128px;
+  }
+
 }
 
 @media (max-width: 1439px) {
@@ -599,13 +573,89 @@ main {
     display: none;
   }
 
+  .headerBg .bigGetInSvg {
+    display: none;
+  }
+
+  .headerBg .smallGetInSvg {
+    display: flex;
+  }
+
+  .headerBg .medGetInSvg {
+    display: none;
+  }
+
   .headerBg .descInner {
-    align-items: center;
+    justify-content: center;
     text-align: center;
   }
+
+  .header .logo {
+    padding-left: 10px;
+  }
+
+  .headerBg .contactUs .textInputGrp {
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .stdPadding {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .stdPaddingRt {
+    padding-right: 32px;
+  }
+
+  .stdPaddingLt {
+    padding-left: 32px;
+  }
+
+  .contactUs {
+    width: 50%;
+  }
+
+  .contactUs .textInputGrp{
+    width: 100%;
+  }
+
+  .contactUs text-input{
+    width: 100%;
+  }
+
+  .inputActual{
+    width: 100%;
+  }
+
+  .tooltipGrp{
+    grid-template-rows: repeat(3, 1fr); 
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
 }
 
-@media (max-width: 480px) {
+@media (max-width: 360px) {
+
+  .tooltipGrp{
+    grid-template-rows: repeat(6, 1fr); 
+    grid-template-columns: 1fr; 
+  }
+
+  .stdPadding {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .stdPaddingRt {
+    padding-right: 16px;
+  }
+
+  .stdPaddingLt {
+    padding-left: 16px;
+  }
+
   .caras .carasCardImg {
     display: flex;
     top: 0;
@@ -634,10 +684,6 @@ main {
     display: none;
   }
 
-  .tooltipGrp {
-    flex-direction: column;
-  }
-
   .caras .carasInner {
     flex-direction: column;
   }
@@ -651,6 +697,10 @@ main {
   }
 
   .header .links {
+    display: none;
+  }
+
+  .header .call {
     display: none;
   }
 
