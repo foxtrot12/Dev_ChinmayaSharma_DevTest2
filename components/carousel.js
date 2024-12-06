@@ -19,6 +19,7 @@ class CardCarousel extends HTMLElement {
 
     loadAttributes() {
         this.imageData = JSON.parse(this.getAttribute('cards') || '[]');
+        this.stylesheetUrl = this.getAttribute('stylesheet')
     }
 
     render() {
@@ -58,7 +59,7 @@ class CardCarousel extends HTMLElement {
 
         // Final template
         this.shadowRoot.innerHTML = `
-            <link rel="stylesheet" href="../styles.css" />
+            <link rel="stylesheet" href="${this.stylesheetUrl}" />
             <div class="flex col caras verHorCenter stdPadding">
             <div class='flex posRel'>
                 <button class="btnClear carBtn cursorPtr prev">

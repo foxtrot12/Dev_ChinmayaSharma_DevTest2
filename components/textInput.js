@@ -6,8 +6,11 @@ class TextInput extends HTMLElement {
 
     this.attachShadow({ mode: "open" });
 
+    this.stylesheetUrl = this.getAttribute('stylesheet')
+
+
     const template = `
-        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="${this.stylesheetUrl}" />
         <div class="textInput posRel wFull hFull flex">
           <input placeholder=" " class="textWhite inputActual ">
           <label class='posAbs padLeft10'></label>

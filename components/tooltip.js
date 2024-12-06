@@ -4,9 +4,11 @@ class TooltipElement extends HTMLElement {
 
         const shadow = this.attachShadow({ mode: 'open' });
 
+        this.stylesheetUrl = this.getAttribute('stylesheet')
+
         const template = document.createElement('template');
         template.innerHTML = `
-        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="${this.stylesheetUrl}" />
           <div class="tooltip-container posRel flex wFull verHorCenter cursorPtr">
             <span class="tooltip-text"></span>
             <span class="tooltip-icon">&#9432;</span>

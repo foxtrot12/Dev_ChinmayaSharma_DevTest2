@@ -4,9 +4,12 @@ class SelectDropdown extends HTMLElement {
 
     this.attachShadow({ mode: "open" });
 
+    this.stylesheetUrl = this.getAttribute('stylesheet')
+
+
     const template = document.createElement("template");
     template.innerHTML = `
-      <link rel="stylesheet" href="../styles.css" />
+      <link rel="stylesheet" href="${this.stylesheetUrl}" />
       <div class="selectDropdown posRel wFull hFull flex">
         <select class="selectActual posAbs hFull wFull"></select>
         <label class="hFull flex itemsCtr selectLabelActual padLeft10 wFull"></label>

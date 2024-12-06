@@ -6,9 +6,11 @@ class VideoPlayer extends HTMLElement {
 
     const url = this.getAttribute('url');
 
+    this.stylesheetUrl = this.getAttribute('stylesheet')
+
     const template = document.createElement("template");
     template.innerHTML = `
-        <link rel="stylesheet" href="../styles.css" />
+        <link rel="stylesheet" href="${this.stylesheetUrl}" />
       <div class="flex videoPlayer posRel">
         <video id="vid" class="hFull wFull">
           <source src="${url}" />

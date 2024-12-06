@@ -18,7 +18,7 @@
 </head>
 
 <body class="posRel padMar0">
-  <spr-header id="spr-header" links='[
+  <spr-header stylesheet="styles.css" id="spr-header" links='[
     { "id": "headHome", "label": "HOME", "href":"#home" },
     { "id": "headAbout", "label": "ABOUT US", "href":"#about" },
     { "id": "headServices", "label": "SERVICES", "href":"#services" }
@@ -95,27 +95,27 @@
           Contact Us
         </p>
         <div class="textInputGrp">
-          <div class="flex textInputOuter"><text-input type="text" id="firstname" label="First Name" autocomplete="off"
+          <div class="flex textInputOuter"><text-input stylesheet="styles.css" type="text" id="firstname" label="First Name" autocomplete="off"
               required>
             </text-input></div>
-          <div class="flex textInputOuter"><text-input type="text" id="lanstname" label="Last Name" autocomplete="off"
+          <div class="flex textInputOuter"><text-input stylesheet="styles.css" type="text" id="lanstname" label="Last Name" autocomplete="off"
               required>
             </text-input></div>
-          <div class="flex textInputOuter"><text-input type="text" id="bEmail" label="Business Email" autocomplete="off"
+          <div class="flex textInputOuter"><text-input stylesheet="styles.css" type="text" id="bEmail" label="Business Email" autocomplete="off"
               required>
             </text-input></div>
-          <div class="flex textInputOuter"><text-input type="text" id="company" label="Company" autocomplete="off"
+          <div class="flex textInputOuter"><text-input stylesheet="styles.css" type="text" id="company" label="Company" autocomplete="off"
               required>
             </text-input></div>
         </div>
-        <select-dropdown id="countrySelect" name="countrySel" class="wFull formInner" required initiallabel="Country"
+        <select-dropdown stylesheet="styles.css" id="countrySelect" name="countrySel" class="wFull formInner" required initiallabel="Country"
           options='[
                 {"value": "In", "label": "India"},
                 {"value": "US", "label": "USA"},
                 {"value": "Fr", "label": "France"}
               ]'></select-dropdown>
         <div class="formInner contactUsBtn">
-          <cta-btn text="Submit" type="primary"></cta-btn>
+          <cta-btn stylesheet="styles.css" text="Submit" type="primary"></cta-btn>
         </div>
       </form>
     </div>
@@ -162,11 +162,11 @@
           To stimulate social contacts, neighborhood initiatives can be
           developed. Social meeting places, such as pubs and churches can help
           to foster the development of close and peripheral relationships.
-          <cta-btn text="92% Success Rate" type="secondary"></cta-btn>
+          <cta-btn stylesheet="styles.css" text="92% Success Rate" type="secondary"></cta-btn>
         </p>
       </div>
     </div>
-    <card-carousel cards='[
+    <card-carousel stylesheet="styles.css" cards='[
       {
         "url": "./assets/images/carImg1.png",
         "heading": "Abbie Harvey",
@@ -224,29 +224,29 @@
     </div>
 
     <div class="tooltipGrp stdPadding gap20">
-        <tooltip-element class="flex one" text="Needs Assessment"
+        <tooltip-element stylesheet="styles.css" class="flex one" text="Needs Assessment"
           tooltiptext="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non justo quis dolor suscipit posuere ultrices id justo."></tooltip-element>
 
-        <tooltip-element class="flex one" text="Treatment Planning & Placement"
+        <tooltip-element stylesheet="styles.css" class="flex one" text="Treatment Planning & Placement"
           tooltiptext="Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis."></tooltip-element>
 
-        <tooltip-element class="flex one" text="Transportation & Logistics"
+        <tooltip-element stylesheet="styles.css" class="flex one" text="Transportation & Logistics"
           tooltiptext="Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae."></tooltip-element>
 
-        <tooltip-element class="flex one" text="Insurance Advocacy"
+        <tooltip-element stylesheet="styles.css" class="flex one" text="Insurance Advocacy"
           tooltiptext="We're experienced in our individual crafts and understand how each one of our roles impacts your plan holistically."></tooltip-element>
 
-        <tooltip-element class="flex one" text="Employment Advocacy"
+        <tooltip-element stylesheet="styles.css" class="flex one" text="Employment Advocacy"
           tooltiptext="Curabitur at nisl quis justo fermentum tincidunt vitae at dolor. Aenean nec nisi."></tooltip-element>
 
-        <tooltip-element class="flex one" text="Aftercare Planning"
+        <tooltip-element stylesheet="styles.css" class="flex one" text="Aftercare Planning"
           tooltiptext="Donec sodales lorem a justo ultrices, vel aliquam eros cursus. Phasellus ut ligula."></tooltip-element>
       <div class="flex"></div>
     </div>
 
     <div class="flex botVideoCont posRel bigVideo">
 
-      <video-player id="botVid" url="assets/videos/vid1.mp4"></video-player>
+      <video-player stylesheet="styles.css" id="botVid" url="assets/videos/vid1.mp4"></video-player>
 
       <div id="videoDesc" class="flex posAbs stdPadding  gap20 videoDesc hFull col verHorCenter">
         <svg class="flex videoTxtSvg selfCtr" width="442" height="33" viewBox="0 0 442 33" fill="none"
@@ -358,7 +358,7 @@
         </div>
       </div>
 
-      <video-player class="flex" id="mobBotVid" url="assets/videos/vid1.mp4"></video-player>
+      <video-player stylesheet="styles.css" class="flex" id="mobBotVid" url="assets/videos/vid1.mp4"></video-player>
 
     </div>
 

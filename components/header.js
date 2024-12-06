@@ -2,6 +2,9 @@ class Header extends HTMLElement {
 constructor() {
 super();
 this.attachShadow({ mode: "open" });
+
+this.stylesheetUrl = this.getAttribute('stylesheet')
+
 }
 
 connectedCallback() {
@@ -48,11 +51,9 @@ this.render(links, headId, endPt);
 
 render(links, headId, endPt) {
 const styleLink = document.createElement("link");
-styleLink.setAttribute("rel", "stylesheet");
-styleLink.setAttribute("href", "header.css");
 
 const template = `
-<link rel="stylesheet" href="../styles.css" />
+<link rel="stylesheet" href="${this.stylesheetUrl}" />
 <header id="${headId}" class="posAbs col flex header itemsCtr wFull spcBw">
   <div class="flex itemsCtr grow head1">
     <svg class="flex logo stdPaddingLt" width="227" height="36" viewBox="0 0 227 36" fill="none" xmlns="http://www.w3.org/2000/svg">

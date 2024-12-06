@@ -5,7 +5,7 @@ body {
 }
 
 main {
-  gap: 80px;
+  gap: 20px;
   background-color: #f5f5f5;
 }
 
@@ -636,7 +636,7 @@ main {
   
 }
 
-@media (max-width: 360px) {
+@media (max-width: 480px) {
 
   .tooltipGrp{
     grid-template-rows: repeat(6, 1fr); 

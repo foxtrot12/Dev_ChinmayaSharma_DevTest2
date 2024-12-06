@@ -11,6 +11,8 @@ class CTA extends HTMLElement {
 
     const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 
+    this.stylesheetUrl = this.getAttribute('stylesheet')
+
     if (this.getAttribute('type') === 'secondary') {
       svg.setAttribute("width", "17");
       svg.setAttribute("height", "14");
@@ -45,7 +47,7 @@ class CTA extends HTMLElement {
 
     const style = document.createElement("style");
 
-    shadow.innerHTML = `<link rel="stylesheet" href="../styles.css" /> `;
+    shadow.innerHTML = `<link rel="stylesheet" href="${this.stylesheetUrl}" /> `;
     shadow.appendChild(style);
     shadow.appendChild(this.button);
   }
