@@ -101,12 +101,54 @@ class CardCarousel extends HTMLElement {
         dots[this.currentIndex].classList.add('activeDot');
     }
 
+    onTouchStart=(event)=>{
+        this.startX = event.touches[0].clientX;
+        this.startY = event.touches[0].clientY;
+      }
+
+    onTouchMove=(event)=>{
+        this.endX = event.touches[0].clientX;
+        this.endY = event.touches[0].clientY;
+    }
+
+    onTouchEnd=()=>{
+        const diffX = this.endX - this.startX;
+        const diffY = this.endY - this.startY;
+  
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+          if (diffX > 50) {
+            this.navigate(-1)
+          } else if (diffX < -50) {
+            this.navigate(1)
+          }
+        }
+  
+        this.startX = 0;
+        this.startY = 0;
+        this.endX = 0;
+        this.endY = 0;
+    }
+
     attachEventListeners() {
         this.shadowRoot.addEventListener('click', this.handleNavigation);
+
+        this.startX = 0;
+        this.startY = 0;
+        this.endX = 0;
+        this.endY = 0;
+    
+        this.shadowRoot.addEventListener('touchstart', this.onTouchStart);
+    
+        this.shadowRoot.addEventListener('touchmove', this.onTouchMove);
+    
+        this.shadowRoot.addEventListener('touchend',this.onTouchEnd);
     }
 
     removeEventListeners() {
         this.shadowRoot.removeEventListener('click', this.handleNavigation);
+        this.shadowRoot.removeEventListener('touchstart', this.onTouchStart);    
+        this.shadowRoot.removeEventListener('touchmove', this.onTouchMove);
+        this.shadowRoot.removeEventListener('touchend',this.onTouchEnd);
     }
 
     handleNavigation(event) {
