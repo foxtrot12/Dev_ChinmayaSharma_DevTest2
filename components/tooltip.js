@@ -21,6 +21,7 @@ class TooltipElement extends HTMLElement {
 
         const textSpan = document.createElement('span');
         textSpan.classList.add('text700')
+        textSpan.classList.add('nonTooltipText')
         textSpan.textContent = this.getAttribute('text');
         container.insertBefore(textSpan, tooltipText);
     }

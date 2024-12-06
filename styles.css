@@ -44,14 +44,6 @@ main {
   flex: 1;
 }
 
-.flex.gap20 {
-  gap: 20px;
-}
-
-.flex.gap80 {
-  gap: 80px;
-}
-
 .flex.spcBw {
   justify-content: space-between;
 }
@@ -77,6 +69,14 @@ main {
   align-self: center;
 }
 
+.gap20 {
+  gap: 20px;
+}
+
+.gap80 {
+  gap: 80px;
+}
+
 /* Header */
 .header {
   height: 50px;
@@ -84,13 +84,24 @@ main {
 }
 
 .header .logo {
-  padding-left: 128px;
+  /* padding-left: 128px; */
+}
+
+.headerBg .smallGetInSvg {
+  display: none;
 }
 
 .header .call {
   padding-left: 46px;
-  padding-right: 128px;
   gap: 4px;
+  align-self: flex-end;
+}
+
+/* Media query for small devices (mobile) */
+@media (max-width: 768px) {
+  .header .call {
+    display: none;
+  }
 }
 
 .header .btnGroup {
@@ -98,11 +109,11 @@ main {
 }
 
 .headerBg {
-  top: 0;
-  z-index: -1;
-  height: 80vh;
   background-image: url("./assets/images/headerBg.png");
   background-size: cover;
+  background-position: bottom;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 /* Padding and Margin */
@@ -112,9 +123,25 @@ main {
   padding-left: 64px;
 }
 
+.stdPaddingRt {
+  padding-right: 64px;
+}
+
+.stdPaddingLt {
+  padding-left: 64px;
+}
+
 @media (min-width: 1440px) {
   .stdPadding {
     padding-right: 128px;
+    padding-left: 128px;
+  }
+
+  .stdPaddingRt {
+    padding-right: 128px;
+  }
+
+  .stdPaddingLt {
     padding-left: 128px;
   }
 }
@@ -125,12 +152,28 @@ main {
     padding-right: 32px;
     padding-left: 32px;
   }
+
+  .stdPaddingRt {
+    padding-right: 32px;
+  }
+
+  .stdPaddingLt {
+    padding-left: 32px;
+  }
 }
 
 /* Media query for extra-small devices (below 480px) */
 @media (max-width: 480px) {
   .stdPadding {
     padding-right: 16px;
+    padding-left: 16px;
+  }
+
+  .stdPaddingRt {
+    padding-right: 16px;
+  }
+
+  .stdPaddingLt {
     padding-left: 16px;
   }
 }
@@ -168,6 +211,10 @@ main {
 
 .textGrey {
   color: #ffffffb2;
+}
+
+.textBot {
+  color: #757575;
 }
 
 .text700 {
@@ -228,7 +275,7 @@ main {
 }
 
 .secondaryCta {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   color: #5bc8af;
   border: solid 1px #5bc8af;
 }
@@ -263,6 +310,7 @@ main {
   cursor: text;
   transform: translateY(50%);
   color: #ffffff80;
+  border-radius: 5px;
 }
 
 .textInput input:focus + label,
@@ -324,15 +372,26 @@ main {
 /* Contact Us Section */
 .contactUs {
   padding: 56px 28px;
-  border-radius: 5px;
+  border-radius: 10px;
   gap: 16px;
   height: 50%;
   background: linear-gradient(180deg, #2a7d6c 0%, rgba(62, 105, 96, 0.62) 100%);
 }
 
+.contactUs .textInputGrp {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
 .contactUsBtn {
   width: 50%;
   align-self: center;
+}
+
+.textInputOuter {
+  min-height: 45px;
 }
 
 .contentGroup {
@@ -350,10 +409,7 @@ main {
 
 .content .weUnder {
   padding-top: 48px;
-}
-
-.content .contentInner {
-  /* gap: 40px; */
+  max-width: 100%;
 }
 
 .caras {
@@ -402,6 +458,10 @@ main {
   border: solid 2px #5bc8af;
   border-radius: 5px;
   padding: 20px 10px;
+}
+
+.tooltip-container .nonTooltipText {
+  text-align: center;
 }
 
 .tooltip-container .tooltip-text {
@@ -458,7 +518,7 @@ main {
   background-size: cover;
 }
 
-.botVideoCont .videoDescUl {
+.videoDescUl {
   list-style-image: url("data:image/svg+xml,%3Csvg width='18' height='14' viewBox='0 0 18 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.6 10.6L1.4 6.4L0 7.8L5.6 13.4L17.6 1.4L16.2 0L5.6 10.6Z' fill='%235BC8AF'/%3E%3C/svg%3E%0A");
 }
 
@@ -467,7 +527,7 @@ main {
 
 .videoPlayer .videoBtn {
   top: 50%;
-  left:60%;
+  left: 60%;
   transition: scale 0.5s;
   z-index: 1;
 }
@@ -476,6 +536,182 @@ main {
   scale: 125%;
 }
 
-.hide{
+.hide {
   display: none;
+}
+
+.smallVideo .videoDesc {
+  background-image: url(assets/images/mobVidBg.png);
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  padding-bottom: 80px;
+  bottom: -115px;
+  z-index: 1;
+}
+
+.visNone {
+  visibility: hidden;
+}
+
+@media (min-width: 1440px) {
+  .header {
+    flex-direction: row !important;
+    gap: 40px;
+  }
+
+  .header .head1 {
+    padding-left: 128px;
+  }
+
+  .header .call {
+    padding-right: 128px;
+    padding-left: 0;
+  }
+
+  .header .head1 .logo {
+    padding-left: 0;
+  }
+
+  .header .head1 .btnGroup {
+    padding-right: 0;
+  }
+
+  .headerBg .medGetInSvg {
+    display: none;
+  }
+}
+
+@media (max-width: 1439px) {
+  .header .head1 {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .headerBg {
+    flex-direction: column;
+    padding-bottom: 100px;
+    gap: 10px;
+  }
+
+  .headerBg .bigGetInSvg {
+    display: none;
+  }
+
+  .headerBg .descInner {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .caras .carasCardImg {
+    display: flex;
+    top: 0;
+    width: 55%;
+    transform: translateY(-35%);
+    border-radius: 10px;
+  }
+
+  .caras .dotCont {
+    width: 20%;
+  }
+
+  .caras {
+    padding: 0;
+  }
+
+  .caras .carBtn {
+    display: none;
+  }
+
+  .caras .carasCard {
+    padding-top: 125px;
+  }
+
+  .caras .carasImg {
+    display: none;
+  }
+
+  .tooltipGrp {
+    flex-direction: column;
+  }
+
+  .caras .carasInner {
+    flex-direction: column;
+  }
+
+  .txtGrp {
+    flex-direction: column;
+  }
+
+  .content .imgGroup {
+    display: none;
+  }
+
+  .header .links {
+    display: none;
+  }
+
+  .headerBg .bigGetInSvg {
+    display: none;
+  }
+
+  .headerBg .smallGetInSvg {
+    display: flex;
+  }
+
+  .headerBg .medGetInSvg {
+    display: none;
+  }
+
+  .headerBg .descInner {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .header .logo {
+    padding-left: 10px;
+  }
+
+  .headerBg .contactUs .textInputGrp {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bigVideo {
+    display: none;
+  }
+
+  .smallVideo {
+    display: flex;
+  }
+
+  .videoPlayer .videoBtn {
+    scale: 50%;
+    top: -50%;
+    left: 50%;
+    transform: translate(-100%, 100%);
+    transition: scale 0.5s;
+    z-index: 1;
+  }
+
+  .textBot {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header .headerHam{
+    display: flex;
+  }
+
+  .header{
+    flex-direction: row !important; 
+  }
+}
+
+.watchTheVidMob {
+  align-self: center;
+  padding-top: 40px;
 }
