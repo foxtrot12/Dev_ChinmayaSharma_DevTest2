@@ -513,6 +513,10 @@ main {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.contentInner .contentTxtgrpInner{
+  flex: 2;
+}
+
 @media (min-width: 1440px) {
 
   .header {
@@ -563,6 +567,16 @@ main {
 }
 
 @media (max-width: 768px) {
+
+  .carousel{
+    padding-top: 60px;
+  }
+
+  .contentInner .contentTxtgrpInner{
+    flex: 1;
+    flex-direction: column;
+  }
+
   .headerBg {
     flex-direction: column;
     padding-bottom: 100px;

@@ -1,37 +1,45 @@
-const toggleVideoDesc = (ev)=>{
-    const desc = document.getElementById('videoDesc');
+const toggleVideoDesc = (ev) => {
+  const desc = document.getElementById("videoDesc");
 
-    if(ev.detail.isPlaying){
-        desc.classList.add('hide');
-    }
-    else{
-        desc.classList.remove('hide')
-    }
-}
+  if (ev.detail.isPlaying) {
+    desc.classList.add("hide");
+  } else {
+    desc.classList.remove("hide");
+  }
+};
 
-const toggleVideoDescMob = (ev)=>{
-    const desc = document.getElementById('videoDescMob');
+const toggleVideoDescMob = (ev) => {
+  const desc = document.getElementById("videoDescMob");
 
-    if(ev.detail.isPlaying){
-        desc.classList.add('hide');
-    }
-    else{
-        desc.classList.remove('hide')
-    }
-}
+  if (ev.detail.isPlaying) {
+    desc.classList.add("hide");
+  } else {
+    desc.classList.remove("hide");
+  }
+};
 
-const botVid = document.getElementById('botVid')
+const submitForm = () => {
+  const contactUsForm = document.getElementById("contactUsForm");
+  contactUsForm ? contactUsForm.submit() : null;
+};
 
-const mobVid = document.getElementById('mobBotVid')
+const botVid = document.getElementById("botVid");
 
-botVid.addEventListener("videoPlayStateChanged",toggleVideoDesc)
+const mobVid = document.getElementById("mobBotVid");
 
-mobVid.addEventListener("videoPlayStateChanged",toggleVideoDescMob)
+const contactusBtn = document.getElementById("contactusBtn");
 
-const beforeUnload = ()=>{
-    botVid.removeEventListener("videoPlayStateChanged", toggleVideoDesc);
-    mobVid.removeEventListener("videoPlayStateChanged",toggleVideoDescMob)
-    window.removeEventListener("beforeunload", beforeUnload);
-}
+botVid.addEventListener("videoPlayStateChanged", toggleVideoDesc);
+
+mobVid.addEventListener("videoPlayStateChanged", toggleVideoDescMob);
+
+contactusBtn.addEventListener("cta-click", submitForm);
+
+const beforeUnload = () => {
+  botVid.removeEventListener("videoPlayStateChanged", toggleVideoDesc);
+  mobVid.removeEventListener("videoPlayStateChanged", toggleVideoDescMob);
+  contactusBtn.removeEventListener("cta-click", submitForm);
+  window.removeEventListener("beforeunload", beforeUnload);
+};
 
 window.addEventListener("beforeunload", beforeUnload);
