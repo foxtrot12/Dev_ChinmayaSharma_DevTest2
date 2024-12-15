@@ -238,6 +238,30 @@ main {
   /* position: relative; */
 }
 
+.textInput .inputActual:invalid{
+  border: solid 1px #FF7777;
+}
+
+.textInput .inputActual:invalid + label{
+  color: #FF7777;
+}
+
+.textInput .inputActual:invalid + label + .errorMsg{
+  display: flex;
+}
+
+.textInput .errorMsg{
+  color: #ffffff;
+  background-color: #FF7777;
+  bottom: -10px;
+  transform: translateY(100%);
+  display: none;
+  font-size: 13px;
+  padding: 5px;
+  border-radius: 5px;
+  z-index: 4;
+}
+
 .textInput .inputActual {
   background: #ffffff0a;
   border: solid 1px #ffffff80;

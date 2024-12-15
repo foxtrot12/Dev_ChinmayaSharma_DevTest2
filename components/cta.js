@@ -75,6 +75,10 @@ class CTA extends HTMLElement {
     });
   }
 
+  static get formAssociated() {
+    return this.getAttribute('form') ?? false;
+  }
+
   _getButtonClass() {
     const ctaType = this.getAttribute("ctatype");
     const baseClass =
