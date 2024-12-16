@@ -112,6 +112,10 @@ main {
 
 /* Padding and Margin */
 
+.paddingLeft10{
+  padding-left: 10px;
+}
+
 .stdPadding {
   padding-right: 64px;
   padding-left: 64px;
@@ -442,7 +446,7 @@ main {
 }
 
 .caras .dotCont {
-  width: 5%;
+  width: 10%;
   min-width: 50px;
 }
 
@@ -513,7 +517,7 @@ main {
 .botVideoCont {
 }
 
-.botVideoCont .videoTxtSvg {
+.videoTxt {
   padding-top: 20px;
 }
 
@@ -639,6 +643,18 @@ main {
     padding-top: 60px;
   }
 
+  .caras .dotCont{
+    width: 20%;
+  }
+
+  .caras .prev{
+    display: none;
+  }
+
+  .caras .next{
+    display: none;
+  }
+
   .contentInner .contentTxtgrpInner {
     flex: 1;
     flex-direction: column;
@@ -673,11 +689,6 @@ main {
 
   .header .logo {
     padding-left: 10px;
-  }
-
-  .headerBg .contactUs .textInputGrp {
-    display: flex;
-    flex-direction: column;
   }
 
   .stdPadding {
