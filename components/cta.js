@@ -76,7 +76,7 @@ class CTA extends HTMLElement {
   }
 
   static get formAssociated() {
-    return this.getAttribute('form') ?? false;
+    return true;
   }
 
   _getButtonClass() {

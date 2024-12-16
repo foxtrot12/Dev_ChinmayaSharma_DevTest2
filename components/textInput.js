@@ -16,7 +16,7 @@ class TextInput extends HTMLElement {
         <div class="textInput posRel wFull hFull flex">
           <input form="${this.formId}" placeholder=" " class="textWhite inputActual ">
           <label class='posAbs padLeft10'></label>
-          ${this.errorMessage ? ('<div class="errorMsg posAbs">' + this.errorMessage + '</div>') : ''}
+          ${this.errorMessage ? ('<div class="errorMsg wFull textCtr hFull flex verHorCenter posAbs"> <svg class="tip posAbs" width="22" height="9" viewBox="0 0 22 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M11 0L22 9H0L11 0Z" fill="#FF7777"/></svg>' + this.errorMessage + '</div>') : ''}
         </div>
       `;
 

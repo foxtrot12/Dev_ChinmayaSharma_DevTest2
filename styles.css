@@ -148,6 +148,14 @@ main {
 }
 
 /* Text Styles */
+
+.textHollow{
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #000000;
+  font-family: sans-serif;
+  color: transparent !important;
+}
+
 .textWhite {
   color: #ffffff;
 }
@@ -176,6 +184,10 @@ main {
   text-align: justify;
 }
 
+.textCtr {
+  text-align: center;
+}
+
 .font14 {
   font-size: 14px;
 }
@@ -186,6 +198,14 @@ main {
 
 .font18 {
   font-size: 18px;
+}
+
+.font36 {
+  font-size: 36px;
+}
+
+.font64 {
+  font-size: 64px;
 }
 
 .underline {
@@ -238,28 +258,31 @@ main {
   /* position: relative; */
 }
 
-.textInput .inputActual:invalid{
-  border: solid 1px #FF7777;
+.textInput .inputActual:invalid {
+  border: solid 1px #ff7777;
 }
 
-.textInput .inputActual:invalid + label{
-  color: #FF7777;
+.textInput .inputActual:invalid + label {
+  color: #ff7777;
 }
 
-.textInput .inputActual:invalid + label + .errorMsg{
+.textInput .inputActual:invalid + label + .errorMsg {
   display: flex;
 }
 
-.textInput .errorMsg{
+.textInput .errorMsg {
   color: #ffffff;
-  background-color: #FF7777;
+  background-color: #ff7777;
   bottom: -10px;
   transform: translateY(100%);
   display: none;
   font-size: 13px;
-  padding: 5px;
   border-radius: 5px;
   z-index: 4;
+}
+
+.errorMsg .tip {
+  top: -5px;
 }
 
 .textInput .inputActual {
@@ -437,6 +460,12 @@ main {
   padding: 20px 10px;
 }
 
+.tooltip-container .tip {
+  left: 50%;
+  transform: translateX(-100%);
+  top: -5px;
+}
+
 .tooltip-container .nonTooltipText {
   text-align: center;
 }
@@ -448,15 +477,16 @@ main {
   overflow-wrap: break-word;
   display: none;
   position: absolute;
-  bottom: 120%;
+  bottom: -6px;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%,100%);
   background-color: #217d6f;
   color: #ffffff;
   padding: 8px 12px;
   border-radius: 4px;
   font-size: 0.875rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 2;
 }
 
 .tooltip-container:hover .tooltip-text {
@@ -531,18 +561,33 @@ main {
   visibility: hidden;
 }
 
-.tooltipGrp{
+.tooltipGrp {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(3, 1fr);
 }
 
-.contentInner .contentTxtgrpInner{
+.contentInner .contentTxtgrpInner {
   flex: 2;
 }
 
-@media (min-width: 1440px) {
+.getInt{
+  font-size: 64px;
+}
 
+.getInt .textHollow{
+  -webkit-text-stroke-color: #ffffff;
+}
+
+.watchVidTxt{
+  font-size: 44px;
+}
+
+.watchVidTxt .textHollow{
+  -webkit-text-stroke-color: #ffffff;
+}
+
+@media (min-width: 1440px) {
   .header {
     flex-direction: row !important;
     gap: 40px;
@@ -581,7 +626,6 @@ main {
   .stdPaddingLt {
     padding-left: 128px;
   }
-
 }
 
 @media (max-width: 1439px) {
@@ -591,12 +635,11 @@ main {
 }
 
 @media (max-width: 768px) {
-
-  .carousel{
+  .carousel {
     padding-top: 60px;
   }
 
-  .contentInner .contentTxtgrpInner{
+  .contentInner .contentTxtgrpInner {
     flex: 1;
     flex-direction: column;
   }
@@ -637,7 +680,6 @@ main {
     flex-direction: column;
   }
 
-
   .stdPadding {
     padding-right: 32px;
     padding-left: 32px;
@@ -655,30 +697,60 @@ main {
     width: 50%;
   }
 
-  .contactUs .textInputGrp{
+  .contactUs .textInputGrp {
     width: 100%;
   }
 
-  .contactUs text-input{
+  .contactUs text-input {
     width: 100%;
   }
 
-  .inputActual{
+  .inputActual {
     width: 100%;
   }
 
-  .tooltipGrp{
-    grid-template-rows: repeat(3, 1fr); 
+  .tooltipGrp {
+    grid-template-rows: repeat(3, 1fr);
     grid-template-columns: repeat(2, 1fr);
   }
+
   
+  .bigVideo {
+    display: none;
+  }
+
+  .smallVideo {
+    display: flex;
+    padding-top: 40px;
+  }
+
+  .smallVideo .videoDesc{
+    bottom: -180px;
+    padding-bottom: 160px;
+  }
+
+  .videoPlayer .videoBtn {
+    scale: 50%;
+    top: -50%;
+    left: 50%;
+    transform: translate(-100%, 100%);
+    transition: scale 0.5s;
+    z-index: 1;
+  }
 }
 
 @media (max-width: 480px) {
+  .getInt{
+    font-size: 44px;
+  }
 
-  .tooltipGrp{
-    grid-template-rows: repeat(6, 1fr); 
-    grid-template-columns: 1fr; 
+  .watchVidTxt{
+    font-size: 36px;
+  }
+
+  .tooltipGrp {
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: 1fr;
   }
 
   .stdPadding {
@@ -768,38 +840,28 @@ main {
     flex-direction: column;
   }
 
-  .bigVideo {
-    display: none;
-  }
-
-  .smallVideo {
-    display: flex;
-  }
-
-  .videoPlayer .videoBtn {
-    scale: 50%;
-    top: -50%;
-    left: 50%;
-    transform: translate(-100%, 100%);
-    transition: scale 0.5s;
-    z-index: 1;
-  }
-
   .textBot {
     flex-direction: column;
     text-align: center;
   }
 
-  .header .headerHam{
+  .header .headerHam {
     display: flex;
   }
 
-  .header{
-    flex-direction: row !important; 
+  .header {
+    flex-direction: row !important;
   }
 }
 
 .watchTheVidMob {
   align-self: center;
   padding-top: 40px;
+}
+
+.goBackBtn {
+  height: 50px;
+  width: 50px;
+  top: 10px;
+  left: 10px;
 }

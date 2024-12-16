@@ -20,8 +20,12 @@ const toggleVideoDescMob = (ev) => {
 
 const submitForm = () => {
   const contactUsForm = document.getElementById("contactUsForm");
-  contactUsForm.checkValidity();
-  contactUsForm ? contactUsForm.submit() : null;
+  if (!contactUsForm) return;
+  if (contactUsForm.checkValidity()) {
+    contactUsForm.submit();
+  } else {
+    contactUsForm.reportValidity();
+  }
 };
 
 const botVid = document.getElementById("botVid");
